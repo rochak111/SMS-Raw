@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Browsable API</title>
+    <style>
+        /* Add custom CSS styles here */
+    </style>
+</head>
+<body>
+    <h1>Browsable API</h1>
+    
+    <div id="content">
+        {% if display_list %}
+            <div class="endpoints">
+                {% if endpoints %}
+                    <h2>API Endpoints</h2>
+                    <ul>
+                        {% for endpoint in endpoints %}
+                            <li><a href="{{ endpoint.url }}">{{ endpoint.name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>No API endpoints are available.</p>
+                {% endif %}
+            </div>
+        {% endif %}
+
+        {% if display_content %}
+            <div class="content">
+                {{ content }}
+            </div>
+        {% endif %}
+    </div>
+
+    <div id="footer">
+        <!-- Add footer content here -->
+    </div>
+</body>
+</html>
